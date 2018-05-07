@@ -1,0 +1,31 @@
+{
+  "name": "webcomic-bot",
+  "version": "1.0.0",
+  "description": "Simple Discord bot that keeps webcomics up to date",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ambiscript/webcomic-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "webcomics",
+    "comics"
+  ],
+  "author": {
+    "name": "Harley Grace",
+    "email": "ambiguousscripting@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ambiscript/webcomic-bot/issues"
+  },
+  "homepage": "https://github.com/ambiscript/webcomic-bot#readme",
+  "dependencies": {
+    "comicscraper": "^2.1.1",
+    "discord.js": "^11.3.2"
+  }
+}
