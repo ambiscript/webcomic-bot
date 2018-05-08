@@ -31,19 +31,25 @@ client.on("ready", () => {
                   * Tuesday, Thursday, or Sunday.
                   */
                   config.comics.forEach(comicURL => {
-                        comicHandler.fetch(comicURL).then(comic => {
+                        console.log(`Parsing comic from ${comicURL}...`);
+                        comicHandler.parse(comicURL).then(comic => {
+                              console.log('Comic parsed!');
+                              console.log('Starting update...');
                               comicHandler.update(comic).then(() => {
+                                    console.log('Update complete!');
                                     const embed = new Discord.RichEmbed()
                                     .setTitle(comic.title)
                                     .setURL(comicURL)
                                     .setImage(comic.url)
                                     .setFooter(comic.subtitle);
       
-                                    client.channels.get(config.channels[comit.title].send({embed}));
+                                    client.channels.get(config.channels[comic.title].send({embed}));
                               }).catch(err => {
+                                    console.log('Update failed.');
                                     console.log(err);
                               });
                         }).catch(err => {
+                              console.log('Unable to parse comic.');
                               console.log(err);
                         });
                   });
