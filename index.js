@@ -23,10 +23,10 @@ setInterval(function() {
 
 client.on("ready", () => {
       const job = new CronJob({
-            cronTime: '00 00 12 * * 1-5/2', 
+            cronTime: '00 00 */6 * * 1-5/2', 
             onTick: function() {
                   /*
-                  * Runs every other (Monday, Wednesday, Friday)
+                  * Runs every other weekday (Monday, Wednesday, Friday)
                   * at 12:00:00 PM (Noon). It does not run on Saturday,
                   * Tuesday, Thursday, or Sunday.
                   */
